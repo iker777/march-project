@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: "Namun";
+  src: url("./fonts/NanumGothic-Regular.ttf");
+}
+
+* {
+  font-family: "Namun", serif;
+}
