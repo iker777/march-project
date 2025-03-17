@@ -1,30 +1,24 @@
 import React, { useState } from 'react'
 
 export const Card = () => {
-
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleClick = () => {
-    setIsFlipped(!isFlipped); // Cambia el estado al hacer clic
-    console.log(isFlipped)
+    setIsFlipped(!isFlipped);
   };
 
-  return (
-    <div id="flipCard" className="card cursor-pointer">
-      <div
-        className={`card w-64 h-96 cursor-pointer ${isFlipped ? 'flipped' : ''}`}
-        onClick={handleClick}
-      >
-        {/* Parte delantera de la carta */}
-        <div className="flip-card-front flip-card-inner flex items-center justify-center w-full h-full bg-blue-500 text-white font-bold text-2xl rounded-lg">
-          ¡Haz clic en mí!
-        </div>
+  console.log(isFlipped);
 
-        {/* Parte trasera de la carta */}
-        <div className="flip-card-back flex items-center justify-center w-full h-full bg-green-500 text-white font-bold text-2xl rounded-lg">
-          ¡Me diste vuelta!
-        </div>
-      </div>
-    </div>
-  )
+ return (
+   <div className={`cursor-pointer ${isFlipped ? 'flipped' : ''}`} onClick={handleClick}>
+     <div className={`flip-card-inner relative w-full h-full bg-white border-2 rounded-lg shadow-lg`} >
+       <div className="flip-card-front flex items-center justify-center w-full h-full bg-blue-500 text-white font-bold text-2xl rounded-lg">
+         ¡Haz clic en mí!
+       </div>
+       <div className="flip-card-back flex items-center justify-center w-full h-full bg-green-500 text-white font-bold text-2xl rounded-lg">
+         ¡Me diste vuelta!
+       </div>
+     </div>
+   </div>
+  );
 }

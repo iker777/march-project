@@ -1,62 +1,69 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carta que se da vuelta</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Cubo 3D</title>
   <style>
-    .card {
-      perspective: 1000px;
+    /* Contenedor principal que establece la perspectiva */
+    .cube-container {
+      perspective: 800px;
+      width: 200px;
+      height: 200px;
+      margin: 100px auto;
     }
-
-    .flip-card-inner {
-      transition: transform 0.6s;
-      transform-style: preserve-3d;
-    }
-
-    .flip-card-front, .flip-card-back {
-      backface-visibility: hidden;
-      position: absolute;
+    
+    /* Contenedor del cubo, usaremos transform-style: preserve-3d */
+    .cube {
       width: 100%;
       height: 100%;
+      position: relative;
+      transform-style: preserve-3d; /* Mantiene los elementos en 3D */
+      animation: rotate 5s infinite linear; /* Rotación infinita */
     }
-
-    .flip-card-back {
-      transform: rotateY(180deg);
+    
+    /* Caras del cubo */
+    .cube-face {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background-color: rgba(0, 0, 255, 0.6);
+      border: 1px solid #000;
     }
-
-    .flipped .flip-card-inner {
-      transform: rotateY(180deg);
+    
+    /* Definir las caras del cubo con sus rotaciones */
+    .front  { transform: translateZ(100px); background-color: rgba(255, 0, 0, 0.7); }
+    .back   { transform: rotateY(180deg) translateZ(100px); background-color: rgba(0, 255, 0, 0.7); }
+    .left   { transform: rotateY(-90deg) translateZ(100px); background-color: rgba(0, 0, 255, 0.7); }
+    .right  { transform: rotateY(90deg) translateZ(100px); background-color: rgba(255, 255, 0, 0.7); }
+    .top    { transform: rotateX(90deg) translateZ(100px); background-color: rgba(255, 0, 255, 0.7); }
+    .bottom { transform: rotateX(-90deg) translateZ(100px); background-color: rgba(0, 255, 255, 0.7); }
+    
+    /* Animación de rotación */
+    @keyframes rotate {
+      from {
+        transform: rotateY(0deg);
+      }
+      to {
+        transform: rotateY(360deg);
+      }
     }
   </style>
 </head>
-<body class="flex justify-center items-center h-screen bg-gray-100">
-
-  <div id="flipCard" class="card w-64 h-96 cursor-pointer">
-    <div class="flip-card-inner relative w-full h-full bg-white border-2 rounded-lg shadow-lg">
-      <!-- Parte delantera de la carta -->
-      <div class="flip-card-front flex items-center justify-center w-full h-full bg-blue-500 text-white font-bold text-2xl rounded-lg">
-        ¡Haz clic en mí!
-      </div>
-
-      <!-- Parte trasera de la carta -->
-      <div class="flip-card-back flex items-center justify-center w-full h-full bg-green-500 text-white font-bold text-2xl rounded-lg">
-        ¡Me diste vuelta!
-      </div>
+<body>
+  
+  <!-- Contenedor del cubo -->
+  <div class="cube-container">
+    <div class="cube">
+      <!-- Caras del cubo -->
+      <div class="cube-face front"></div>
+      <div class="cube-face back"></div>
+      <div class="cube-face left"></div>
+      <div class="cube-face right"></div>
+      <div class="cube-face top"></div>
+      <div class="cube-face bottom"></div>
     </div>
   </div>
-
-  <script>
-    // Seleccionamos la carta
-    const flipCard = document.getElementById('flipCard');
-    
-    // Añadimos un evento de clic
-    flipCard.addEventListener('click', () => {
-      // Agregamos o removemos la clase 'flipped' que realiza la rotación
-      flipCard.classList.toggle('flipped');
-    });
-  </script>
-
+  
 </body>
 </html>
