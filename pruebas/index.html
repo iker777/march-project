@@ -7,7 +7,7 @@
   <style>
     /* Contenedor principal que establece la perspectiva */
     .cube-container {
-      perspective: 800px;
+      perspective: 1000px;
       width: 200px;
       height: 200px;
       margin: 100px auto;
@@ -19,7 +19,7 @@
       height: 100%;
       position: relative;
       transform-style: preserve-3d; /* Mantiene los elementos en 3D */
-      animation: rotate 5s infinite linear; /* Rotación infinita */
+      animation: rotate 15s infinite linear; /* Rotación infinita */
     }
     
     /* Caras del cubo */
@@ -35,7 +35,7 @@
     .front  { transform: translateZ(100px); background-color: rgba(255, 0, 0, 0.7); }
     .back   { transform: rotateY(180deg) translateZ(100px); background-color: rgba(0, 255, 0, 0.7); }
     .left   { transform: rotateY(-90deg) translateZ(100px); background-color: rgba(0, 0, 255, 0.7); }
-    .right  { transform: rotateY(90deg) translateZ(100px); background-color: rgba(255, 255, 0, 0.7); }
+    .right  { transform: rotateY(0deg) translateZ(100px); background-color: rgba(255, 255, 0, 0.7); }
     .top    { transform: rotateX(90deg) translateZ(100px); background-color: rgba(255, 0, 255, 0.7); }
     .bottom { transform: rotateX(-90deg) translateZ(100px); background-color: rgba(0, 255, 255, 0.7); }
     
