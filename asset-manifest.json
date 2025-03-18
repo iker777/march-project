@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/march-proyect/static/css/main.93cf9de7.css",
+    "main.js": "/march-proyect/static/js/main.3346dcd1.js",
+    "index.html": "/march-proyect/index.html",
+    "main.93cf9de7.css.map": "/march-proyect/static/css/main.93cf9de7.css.map",
+    "main.3346dcd1.js.map": "/march-proyect/static/js/main.3346dcd1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.93cf9de7.css",
+    "static/js/main.3346dcd1.js"
+  ]
+}
