@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 
-export const Card = () => {
+export const Card = ({id}) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleClick = () => {
     setIsFlipped(!isFlipped);
   };
 
-  console.log(isFlipped);
 
  return (
    <div className={`cursor-pointer ${isFlipped ? 'flipped' : ''}`} onClick={handleClick}>
@@ -15,8 +14,13 @@ export const Card = () => {
        <div className="flip-card-front flex items-center justify-center w-full h-full bg-blue-500 text-white font-bold text-2xl rounded-lg">
          ¡Haz clic en mí!
        </div>
-       <div className="flip-card-back flex items-center justify-center w-full h-full bg-green-500 text-white font-bold text-2xl rounded-lg">
-         ¡Me diste vuelta!
+       <div className="flip-card-back grid grid-rows-3 w-full h-full bg-green-500 text-white font-bold text-2xl rounded-lg">
+        <div className='w-full flex justify-end'>
+          <div className=' w-[2.5em] h-[2.5em] m-[0.5em] bg-slate-950 bg-opacity-50 rounded-full flex justify-center items-center'>
+            1
+          </div>
+        </div>
+        <p className='w-full text-center flex justify-center items-center'>¡Me diste vuelta!</p>
        </div>
      </div>
    </div>
