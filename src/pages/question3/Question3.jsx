@@ -4,8 +4,8 @@ export const Question3 = () => {
   return (
     <>
       <Question
-        correctAnswer="42"
-        question="What is the answer to life, the universe and everything?"
+        correctAnswer="Reloj"
+        question="Mido el tiempo, pero no tengo vida. Me escuchas en las torres y me ves en colgado. Sin mí, el día sería un caos y la noche eterna. ¿Qué soy?"
         nextPage="/finalPage"
       />
     </>
