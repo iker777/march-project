@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* div {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: hidden;
+}  */
 .flip-card-inner {
   transition: transform 0.6s;
   transform-style: preserve-3d;

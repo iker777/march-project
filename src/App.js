@@ -22,6 +22,7 @@ function App() {
           <Route exact path="/game" element={<Game/>} />
           <Route exact path="/question1" element={<Question1/>} />
           <Route exact path="/question2" element={<Question2/>} />
+          <Route exact path="/question3" element={<Question2/>} />
         </Routes>
       </div>
     </BrowserRouter>

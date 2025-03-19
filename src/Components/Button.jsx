@@ -2,6 +2,6 @@ import React from 'react'
 
 export const Button = ({text, onClick}) => {
   return (
-    <button onClick={onClick} className='bg-red-500 p-4 rounded text-white w-64 h-20 flex justify-center items-center'>{text}</button>
+    <button onClick={onClick} className='uppercase px-14 py-5 text-lg font-semibold text-yellow-200 bg-black/60 border border-yellow-500 rounded-2xl shadow-lg shadow-yellow-900/30 hover:bg-yellow-600/20 hover:scale-105 transition hover:text-white'>{text}</button>
   )
 }

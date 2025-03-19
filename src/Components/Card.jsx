@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import dataImg from '../helpers/dataImg';
 
 export const Card = ({number, onClick}) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -9,18 +10,18 @@ export const Card = ({number, onClick}) => {
 
 
  return (
-   <div className={`cursor-pointer ${isFlipped ? 'flipped' : ''}`} onClick={() => {handleClick(); onClick()}}>
-     <div className={`flip-card-inner relative w-full h-full bg-white border-2 rounded-lg shadow-lg`} >
-       <div className="flip-card-front flex items-center justify-center w-full h-full bg-blue-500 text-white font-bold text-2xl rounded-lg">
+   <div className={`relative cursor-pointer ${isFlipped ? 'flipped' : ''}`} onClick={() => {handleClick(); onClick()}}>
+     <div className={`flip-card-inner relative w-full h-full  rounded-lg shadow-lg`} >
+       <div className="flip-card-front flex items-center justify-center w-full h-full text-yellow-200 bg-black/80 border border-yellow-500 text-2xl rounded-lg">
          ¡Haz clic en mí!
        </div>
-       <div className="flip-card-back grid grid-rows-3 w-full h-full bg-green-500 text-white font-bold text-2xl rounded-lg">
-        <div className='w-full flex justify-end'>
-          <div className=' w-[2.5em] h-[2.5em] m-[0.5em] bg-slate-950 bg-opacity-50 rounded-full flex justify-center items-center'>
+       <div className="flip-card-back flex justify-center items-center w-full h-full bg-black/95 text-white font-bold text-2xl rounded-lg p-5">
+        <div className='absolute top-0 right-0 w-full flex justify-end'>
+          <div className=' w-[2.5em] h-[2.5em] m-[0.5em] bg-slate-600 bg-opacity-50 rounded-full flex justify-center items-center'>
             {number}
           </div>
         </div>
-        <p className='w-full text-center flex justify-center items-center'>¡Me diste vuelta!</p>
+        <img className='max-h-full rounded  border-white' src={dataImg[number - 1]?.img || 'default-image.jpg'} />
        </div>
      </div>
    </div>
